@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+✨ This project was built as a test, with ReactJS, on the event NLW TOGETHER from Rocketseat
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
