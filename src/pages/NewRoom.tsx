@@ -1,15 +1,13 @@
 import { Link, useHistory } from 'react-router-dom'
 import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
-
-import { FormEvent } from 'react'
+import { database } from '../services/firebase';
+import { FormEvent, useState } from 'react'
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import '../styles/auth.scss';
-import { useState } from 'react';
-import { database } from '../services/firebase';
 
 export function NewRoom() {
     // const { value, setValue } = useContext(TestContext)
@@ -32,7 +30,7 @@ export function NewRoom() {
             title: newRoom,
             authorId: user?.id,
         })
-        history.push(`/rooms/&{firebaseRoom.key}`)
+        history.push(`/rooms/${firebaseRoom.key}`)
         //key é o id que foi inserido
     }
 

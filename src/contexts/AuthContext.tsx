@@ -1,7 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { createContext, ReactNode } from "react";
-import { auth, firebase } from "../services/firebase";
+import { createContext, ReactNode, useEffect, useState } from "react";
+import { auth } from "../services/firebase";
+import firebase from 'firebase'
 
 type User = {
   id: string;
@@ -10,16 +9,15 @@ type User = {
 }
 
 type AuthContextType = {
-  user: User | undefined;
-  signInWithGoogle: () => Promise<void>;
+  user: User | undefined
+  signInWithGoogle: () => Promise<void>
 }
-
-export const AuthContext = createContext({} as AuthContextType);
 
 type AuthContextProviderProps = {
   children: ReactNode;
 
 }
+export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
   //value variável 
@@ -44,7 +42,6 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     return () => {
       unsubscribe();
     }
-
   }, [])
   //dispara a função um aunica vez assim que app for mostrado em tela
 

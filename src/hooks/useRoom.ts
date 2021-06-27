@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { database } from '../services/firebase';
-import '../components/Question/question.scss';
 import { useAuth } from "./useAuth";
 
 type QuestionType = {
@@ -53,7 +52,6 @@ export function useRoom(roomId: string) {
           //some retorna true ou false
         }
       })
-
       setTitle(databaseRoom.title);
       setQuestions(parsedQuestions);
     })

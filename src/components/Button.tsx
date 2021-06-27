@@ -13,7 +13,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export function Button({ isOutlined = false, ...props }: ButtonProps) {
     //coloca todas as props no botão de retorno
     return (
-        <button className={`button${isOutlined ? 'outlined' : ''}`}
-            {...props}></button>
+        <button className={`button${isOutlined} ? 'outlined'`}
+            {...props} />
     )
 }

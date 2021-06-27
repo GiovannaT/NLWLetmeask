@@ -1,14 +1,13 @@
 import { useHistory } from 'react-router-dom'
 import { Button } from '../components/Button';
 import { FormEvent, useState } from 'react';
+import { useAuth } from '../hooks/useAuth';
+import { database } from '../services/firebase';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 import '../styles/auth.scss';
-import { useAuth } from '../hooks/useAuth';
-import { database } from '../services/firebase';
-
 
 export function Home() {
     const history = useHistory();
@@ -47,12 +46,14 @@ export function Home() {
             <aside>
                 <img src={illustrationImg} alt="Question Illustration" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
-                <p>Tire as dúvidas da sua audiência em tempo real</p></aside>
+                <p>Tire as dúvidas da sua audiência em tempo real</p>
+            </aside>
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
-
-                    <button onClick={handleCreateRoom} className="create-room"><img src={googleIconImg} alt="Google" />Crie sua sala com o Google</button>
+                    <button onClick={handleCreateRoom} className="create-room">
+                        <img src={googleIconImg} alt="Google" />Crie sua sala com o Google
+                    </button>
                     <div className="separator">Ou entre em uma sala</div>
                     <form onSubmit={handleJoinRoom}>
                         <input
